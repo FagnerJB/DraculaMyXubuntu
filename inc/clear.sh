@@ -9,18 +9,17 @@ sudo rm -R /usr/share/icons/Adwaita /usr/share/icons/DMZ-White /usr/share/icons/
 # Apaga instaladores baixados
 rm ~/Downloads/DMXubuntu.zip
 rm ~/Downloads/google-chrome-stable_current_amd64.deb
-rm ~/Downloads/vscode-linux_amd64.deb
 rm ~/Downloads/dracula_gtk.zip
-rm ~/Downloads/filezilla_amd64.deb
 rm ~/Downloads/dracula_insomnia.zip
+rm ~/Downloads/dracula_wps.zip
 
 # Remove dependências não mais necessárias
-sudo apt-get -y autoremove --purge
+sudo apt-get -q -y autoremove --purge
 
 # Limpa pacotes
-sudo apt-get -y clean
+sudo apt-get -q -y clean
 
 # Limpa cache
-sudo apt-get -y autoclean
+sudo apt-get -q -y autoclean
 
 sudo dpkg --configure -a

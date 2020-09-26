@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Paper Icon
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Paper"
+xfconf-query -c xsettings -p /Net/FallbackIconTheme -s "elementary-xfce-dark"
+
 # Configura VS Code
 mkdir -p ~/.local/share/applications/ && cp ./files/mimeapps.list ~/.local/share/applications/mimeapps.list
 code --install-extension shan.code-settings-sync
@@ -10,38 +14,34 @@ git config --global credential.helper store
 # Dracula - Terminal
 mkdir -p ~/.local/share/xfce4/terminal/colorschemes && cp ./files/Dracula.theme ~/.local/share/xfce4/terminal/colorschemes/Dracula.theme
 
-# BMZ white - Cursor
+# BMZ White - Cursor
 mkdir -p ~/.icons/ && tar -xf ./files/BMZ-white-20191018164535.tar.gz -C ~/.icons/
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "BMZ-white"
 
-# Paper Icon
-sudo apt-get install paper-icon-theme -y
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Paper"
-xfconf-query -c xsettings -p /Net/FallbackIconTheme -s "elementary-xfce-dark"
-
-# Firecode (font)
-sudo apt-get install fonts-firacode -y
+# FiraCode (font)
 xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "FiraCode Regular 13"
 
 # Dracula - Tema
-wget https://github.com/dracula/gtk/archive/master.zip -O ~/Downloads/dracula_gtk.zip
-mkdir -p ~/.themes/ && unzip ~/Downloads/dracula_gtk.zip -d ~/.themes/ && mv ~/.themes/gtk-master ~/.themes/Dracula
+wget -q https://github.com/dracula/gtk/archive/master.zip -O ~/Downloads/dracula_gtk.zip
+mkdir -p ~/.themes/ && unzip -q ~/Downloads/dracula_gtk.zip -d ~/.themes/ && mv ~/.themes/gtk-master ~/.themes/Dracula
 xfconf-query -c xsettings -p /Net/ThemeName -s "Dracula"
 xfconf-query -c xfwm4 -p /general/theme -s "Dracula"
 xfconf-query -c xfce4-notifyd -p /theme -s "Dracula"
 
 # Dracula - Insomnia
-wget -https://github.com/dracula/insomnia/archive/master.zip -O ~/Downloads/dracula_insomnia.zip
-mkdir -p ~/.config/Insomnia/plugins/ && unzip ~/Downloads/dracula_insomnia.zip -d ~/.config/Insomnia/plugins/
+wget -q https://github.com/dracula/insomnia/archive/master.zip -O ~/Downloads/dracula_insomnia.zip
+mkdir -p ~/.config/Insomnia/plugins/ && unzip -q ~/Downloads/dracula_insomnia.zip -d ~/.config/Insomnia/plugins/
 
 # Dracula - Wallpaper
-wget https://github.com/dracula/wallpaper/archive/master.zip -O ~/Downloads/dracula_wps.zip
-unzip ~/Downloads/dracula_wps.zip && cp ~/Downloads/wallpaper-master/xubuntu.png ~/Imagens/xubuntu.png
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "~/Imagens/xubuntu.png"
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor1/image-path -s "~/Imagens/xubuntu.png"
+wget -q https://github.com/dracula/wallpaper/archive/master.zip -O ~/Downloads/dracula_wps.zip
+unzip -qj ~/Downloads/dracula_wps.zip wallpaper-master/xubuntu.png -d ~/Imagens/
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s ~/Imagens/xubuntu.png
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s ~/Imagens/xubuntu.png
 
 # Configura 2ª Espaço de trabalho
-xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/last-image -t string -s "~/Imagens/xubuntu.png"
+xfconf-query -c xfce4-desktop -p /general/workspace_count -s 2
+xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/last-image -t string -s ~/Imagens/xubuntu.png
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/image-style -t int -s 5
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/color-style -t int -s 0
 xfconf-query -c xfwm4 -p /general/workspace_names -t string -s "🟪" -t string -s "🟩"

@@ -6,7 +6,7 @@ no Xubuntu 20.04 recomendadas por Fagner JB.
 Este código foi desenvolvimento para sistemas recém-instalados.
 Não nos responsabilizamos pelo uso do código em outra circunstância.
 
-Para instalações individuais veja:
+Para instalações individuais veja
 * [matheus-souza/backpack](https://github.com/matheus-souza/backpack)
 
 ## Remove
@@ -53,11 +53,11 @@ Para instalações individuais veja:
 ** Ao abrir o VS Code, configure Settings Sync.
 
 ## Execução
-No terminal de sua opção, execute a única linha:
+No terminal de sua opção, execute a única linha abaixo. O sistema será **reiniciado** ao final.
 ```
 cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./run.sh && ./run.sh
 ```
 
 ## Links
-* Baixar [Xubuntu](https://xubuntu.org/download/)
-* Virtualizador recomendado [VMware Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
+* [Xubuntu](https://xubuntu.org/download/) - Baixar Xubuntu
+* [VMware Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) - Virtualizador recomendado

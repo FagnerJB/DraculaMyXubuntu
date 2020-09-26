@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Atualiza repositórios
-sudo apt-get update
+sudo apt -q update
 
 # Instala dependencias
-sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+sudo apt install -q -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
 # Docker - Adiciona repositório
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -18,10 +18,10 @@ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 # Paper Icon - Adiciona repositório
-sudo add-apt-repository -u ppa:snwh/ppa -y
+sudo add-apt-repository -u -y ppa:snwh/ppa
 
 # Atualiza repositórios
-sudo apt-get update
+sudo apt -q update
 
 # Atualiza instalados
-sudo apt-get -y upgrade
+sudo apt -q -y upgrade
