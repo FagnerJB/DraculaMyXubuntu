@@ -49,5 +49,5 @@ Este código foi desenvolvimento para sistemas recém-instalados. Não recomenda
 ## Execução
 No terminal de sua opção, execute a única linha:
 ```
-wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ~/Downloads/DMXubuntu.zip && unzip ~/Downloads/DMXubuntu.zip && chown +x ~/Downloads/DraculaMyXubuntu-master/run.sh && sudo ~/Downloads/DraculaMyXubuntu-master/run.sh
+cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip ./DMXubuntu.zip && chmod +x ./DraculaMyXubuntu-master/run.sh && sudo ./DraculaMyXubuntu-master/run.sh
 ```
