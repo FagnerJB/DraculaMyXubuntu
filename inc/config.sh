@@ -4,7 +4,10 @@
 mkdir -p ~/.local/share/applications/ && cp ./files/mimeapps.list ~/.local/share/applications/mimeapps.list
 code --install-extension shan.code-settings-sync
 
-# Atualiza terminal com Dracula Theme
+# Git Credentials
+git config --global credential.helper store
+
+# Dracula - Terminal
 mkdir -p ~/.local/share/xfce4/terminal/colorschemes && cp ./files/Dracula.theme ~/.local/share/xfce4/terminal/colorschemes/Dracula.theme
 
 # BMZ white - Cursor
@@ -41,10 +44,7 @@ xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor1/image-path -s "~/Ima
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/last-image -t string -s "~/Imagens/xubuntu.png"
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/image-style -t int -s 5
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/color-style -t int -s 0
-xfconf-query -c xfwm4 -p /general/workspace_names -t string -s 🟪 -t string -s 🟩
-
-# Git Credentials
-git config --global credential.helper store
+xfconf-query -c xfwm4 -p /general/workspace_names -t string -s "🟪" -t string -s "🟩"
 
 # Remove ícones área de trabalho
 xfconf-query -c xfce4-desktop -p /desktop-icons/style -s 0

@@ -41,13 +41,14 @@ Para instalações individuais veja:
 * Snap
 * VS Code
 * Yarn
+* ZSH e Oh My ZSH
 
 ## Configura
 * Tema Dracula
 * Ícones Paper
 * Cursor BMZ White
 * Fontes FiraCode e Noto Color Emoji
-* Configure o resto com o uso (manual):
+* Configure o resto com o uso (manual)
 ** Credênciais fornecidas no ´git´ serão salvas de maneira global.
 ** Ao abrir o VS Code, configure Settings Sync.
 
