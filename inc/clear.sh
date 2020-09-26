@@ -1,20 +1,24 @@
 #!/bin/bash
 
-# Apaga papeis de parede padrões
-sudo rm -R /usr/share/xfce4/backdrops/*
+# Apaga arquivos de configurações padrão
+sudo rm /usr/share/xfce4/backdrops/*
+sudo rm /usr/share/backgrouns/greybird.svg
+sudo rm /usr/share/backgrounds/xfce/*
+sudo rm -R /usr/share/icons/Adwaita /usr/share/icons/DMZ-White /usr/share/icons/DMZ-Black /usr/share/icons/elementary-xfce-darker /usr/share/icons/elementary-xfce-darkest /usr/share/icons/hicolor /usr/share/icons/HighContrast /usr/share/icons/Humanity /usr/share/icons/Humanity-Dark /usr/share/icons/LoginIcons /usr/share/icons/ubuntu-mono-light /usr/share/icons/ubuntu-mono-dark
 
 # Apaga instaladores baixados
-sudo rm ~/Downloads/google-chrome-stable_current_amd64.deb
-sudo rm ~/Downloads/vscode-linux_amd64.deb
-sudo rm ~/Downloads/dracula_gtk.zip
-sudo rm ~/Downloads/filezilla_amd64.deb
-sudo rm ~/Downloads/dracula_insomnia.zip
-
-# Limpa pacotes
-sudo apt-get -y clean
+rm ~/Downloads/DMXubuntu.zip
+rm ~/Downloads/google-chrome-stable_current_amd64.deb
+rm ~/Downloads/vscode-linux_amd64.deb
+rm ~/Downloads/dracula_gtk.zip
+rm ~/Downloads/filezilla_amd64.deb
+rm ~/Downloads/dracula_insomnia.zip
 
 # Remove dependências não mais necessárias
 sudo apt-get -y autoremove --purge
+
+# Limpa pacotes
+sudo apt-get -y clean
 
 # Limpa cache
 sudo apt-get -y autoclean
