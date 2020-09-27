@@ -30,7 +30,7 @@ xfconf-query -c xfce4-notifyd -p /theme -s "Dracula"
 
 # Dracula - Insomnia
 wget -q https://github.com/dracula/insomnia/archive/master.zip -O ~/Downloads/dracula_insomnia.zip
-mkdir -p ~/.config/Insomnia/plugins/ && unzip -q ~/Downloads/dracula_insomnia.zip -d ~/.config/Insomnia/plugins/
+mkdir -p ~/.config/Insomnia/plugins/ && unzip -q ~/Downloads/dracula_insomnia.zip -d ~/snap/insomnia/current/.config/Insomnia/plugins/
 
 # Dracula - Wallpaper
 wget -q https://github.com/dracula/wallpaper/archive/master.zip -O ~/Downloads/dracula_wps.zip
