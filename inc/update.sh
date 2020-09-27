@@ -13,6 +13,10 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 # Node.js - Adiciona repositório
 curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 
+# Insomnia - Adiciona repositório
+wget -q -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+
 # Yarn - Adiciona repositório
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list

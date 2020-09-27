@@ -6,8 +6,8 @@ sudo apt install -q -y snapd
 # Fontes - FiraCode e Noto Emoji Color
 sudo apt install -q -y fonts-firacode fonts-noto-color-emoji
 
-# Nautilus (Arquivos/Files)
-sudo apt install -q -y nautilus nautilus-extension-gnome-terminal
+# Nemo
+sudo apt install -q -y nemo
 
 # Git
 sudo apt install -q -y git
@@ -27,18 +27,21 @@ sudo apt install -q -y paper-icon-theme
 # FileZilla
 sudo apt install -q -y filezilla
 
+# Python PIP
+sudo apt install -q -y python3-pip python-is-python3
+
+# Insomnia
+sudo apt install -q -y insomnia
+
 # Google Chrome
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/Downloads/google-chrome-stable_current_amd64.deb
 sudo dpkg -i ~/Downloads/google-chrome-stable_current_amd64.deb
 
-# Arruma dependências
-sudo apt install -q -y -f
-
 # Spotify
-sudo snap install -y spotify
+sudo snap install spotify
 
 # VS Code
-sudo snap install -y code --classic
+sudo snap install code --classic
 
-# Insomnia
-sudo snap install -y insomnia
+# Arruma dependências
+sudo apt install -q -y -f

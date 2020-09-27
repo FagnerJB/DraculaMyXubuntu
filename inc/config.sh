@@ -1,25 +1,35 @@
 #!/bin/bash
 
+# Cria Apps
+mkdir -p ~/Apps
+
 # Paper Icon
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Paper"
 xfconf-query -c xsettings -p /Net/FallbackIconTheme -s "elementary-xfce-dark"
 
-# Configura VS Code
-mkdir -p ~/.local/share/applications/ && cp ./files/mimeapps.list ~/.local/share/applications/mimeapps.list
+# Dracula - Ícone
+cp ~/Downloads/DraculaMyXubuntu-master/files/DraculaIcon.png ~/Imagens/DraculaIcon.png
+cp -f ~/Downloads/DraculaMyXubuntu-master/files/whiskermenu-1.rc ~/.config/xfce4/panel/whiskermenu-1.rc
+
+# Configura programas padrões
+mkdir -p ~/.local/share/applications/ && cp ~/Downloads/DraculaMyXubuntu-master/files/mimeapps.list ~/.local/share/applications/mimeapps.list
+
+# VS Code - Instalal Extenção Settings Sync
 code --install-extension shan.code-settings-sync
 
 # Git Credentials
 git config --global credential.helper store
 
 # Dracula - Terminal
-mkdir -p ~/.local/share/xfce4/terminal/colorschemes && cp ./files/Dracula.theme ~/.local/share/xfce4/terminal/colorschemes/Dracula.theme
+mkdir -p ~/.local/share/xfce4/terminal/colorschemes && cp ~/Downloads/DraculaMyXubuntu-master/files/Dracula.theme ~/.local/share/xfce4/terminal/colorschemes/Dracula.theme
+mkdir -p ~/.config/xfce4/terminal && cp ~/Downloads/DraculaMyXubuntu-master/files/terminalrc ~/.config/xfce4/terminal/terminalrc
 
 # BMZ White - Cursor
-mkdir -p ~/.icons/ && tar -xf ./files/BMZ-white-20191018164535.tar.gz -C ~/.icons/
+mkdir -p ~/.icons/ && tar -xf ~/Downloads/DraculaMyXubuntu-master/files/BMZ-white-20191018164535.tar.gz -C ~/.icons/
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "BMZ-white"
 
 # FiraCode (font)
-xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "FiraCode Regular 13"
+xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "FiraCode Regular 12"
 
 # Dracula - Tema
 wget -q https://github.com/dracula/gtk/archive/master.zip -O ~/Downloads/dracula_gtk.zip
@@ -28,9 +38,12 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Dracula"
 xfconf-query -c xfwm4 -p /general/theme -s "Dracula"
 xfconf-query -c xfce4-notifyd -p /theme -s "Dracula"
 
-# Dracula - Insomnia
+# Insomnia - Dracula
 wget -q https://github.com/dracula/insomnia/archive/master.zip -O ~/Downloads/dracula_insomnia.zip
-mkdir -p ~/.config/Insomnia/plugins/ && unzip -q ~/Downloads/dracula_insomnia.zip -d ~/snap/insomnia/current/.config/Insomnia/plugins/
+mkdir -p ~/.config/Insomnia/plugins/ && unzip -q ~/Downloads/dracula_insomnia.zip -d ~/.config/Insomnia/plugins/
+# Insomnia - Faker
+wget -q https://github.com/bbbco/insomnia-plugin-faker/archive/master.zip ~/Downloads/faker_insomnia.zip
+unzip -q ~/Downloads/faker_insomnia.zip -d ~/.config/Insomnia/plugins/
 
 # Dracula - Wallpaper
 wget -q https://github.com/dracula/wallpaper/archive/master.zip -O ~/Downloads/dracula_wps.zip
@@ -40,7 +53,7 @@ xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s ~/Imag
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s ~/Imagens/xubuntu.png
 
 # Configura 2ª Espaço de trabalho
-xfconf-query -c xfce4-desktop -p /general/workspace_count -s 2
+xfconf-query -c xfwm4 -p /general/workspace_count -s 2
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/last-image -t string -s ~/Imagens/xubuntu.png
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/image-style -t int -s 5
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/color-style -t int -s 0
@@ -69,25 +82,27 @@ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-
 # Configura Panel
 xfconf-query -c xfce4-panel -np /plugins/plugin-5 -t string -s 'systray'
 xfconf-query -c xfce4-panel -np /plugins/plugin-7 -t string -s 'indicator'
-xfconf-query -c xfce4-panel -np /plugins/plugin-13 -t string -s 'cpugraph'
 xfconf-query -c xfce4-panel -np /plugins/plugin-14 -t string -s 'actions'
-xfconf-query -c xfce4-panel -np /plugins/plugin-15 -t string -s 'weather'
 xfconf-query -c xfce4-panel -np /plugins/plugin-16 -t string -s 'pager'
 
 xfconf-query -c xfce4-panel -np /plugins/plugin-3/middle-click -t int -s 1
 xfconf-query -c xfce4-panel -np /plugins/plugin-3/window-scrolling -t bool -s false
 xfconf-query -c xfce4-panel -np /plugins/plugin-3/include-all-monitors -t bool -s false
 
-xfconf-query -c xfce4-panel -p /plugins/plugin-10/mpris-players -s 'chrome.instance1414;chrome.instance1449;chrome.instance6452'
+xfconf-query -c xfce4-panel -p /plugins/plugin-10/mpris-players -s 'spotify'
 
 xfconf-query -c xfce4-panel -p /plugins/plugin-12/digital-format -s '%a %H:%M'
 xfconf-query -c xfce4-panel -np /plugins/plugin-12/tooltip-format -t string -s '%A, %d %B %Y'
 
 xfconf-query -c xfce4-panel -np /plugins/plugin-14/items -t string -s '-lock-screen' -t string -s '-switch-user' -t string -s '-separator' -t string -s '-suspend' -t string -s '-hibernate' -t string -s '-hybrid-sleep' -t string -s '-separator' -t string -s '-shutdown' -t string -s '-restart' -t string -s '-separator' -t string -s '+logout' -t string -s '-logout-dialog'
+xfconf-query -c xfce4-panel -np /plugins/plugin-14/items -t int -s 0
 
 xfconf-query -c xfce4-panel -np /plugins/plugin-16/miniature-view -t bool -s false
 xfconf-query -c xfce4-panel -np /plugins/plugin-16/rows -t int -s 2
 xfconf-query -c xfce4-panel -np /plugins/plugin-16/workspace-scrolling -t bool -s false
 
 xfconf-query -c xfce4-panel -p /panels/panel-0/size -s 28
-xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 -t int -s 4 -t int -s 16 -t int -s 5 -t int -s 6 -t int -s 7 -t int -s 8 -t int -s 10 -t int -s 11 -t int -s 12 -t int -s 15 -t int -s 13 -t int -s 14
+xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 -t int -s 4 -t int -s 16 -t int -s 5 -t int -s 6 -t int -s 7 -t int -s 8 -t int -s 10 -t int -s 11 -t int -s 12 -t int -s 14
+
+gsettings set org.gnome.crypto.cache gpg-cache-method always
+gsettings set org.cinnamon.desktop.applications.terminal exec xfce4-terminal

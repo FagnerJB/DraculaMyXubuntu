@@ -1,21 +1,26 @@
 # DraculaMyXubuntu
 
-Um bash script para fazer todas as instalações, configurações e desinstalações iniciais
+Um *bash script* para fazer todas as instalações, configurações e desinstalações iniciais
 no Xubuntu 20.04 recomendadas por Fagner JB.
 
-Este código foi desenvolvimento para sistemas recém-instalados.
-Não nos responsabilizamos pelo uso do código em outra circunstância.
+O processo demora cerca de 30 minutos e diminui o uso de disco em aproximadamente 1GB.
 
-Para instalações individuais veja
+Este código foi desenvolvimento para sistemas recém-instalados.
+Não nos responsabilizamos pelo sua execução em outras circunstâncias.
+
+Para instalações individuais veja:
 * [matheus-souza/backpack](https://github.com/matheus-souza/backpack)
 
 ## Remove
 * Dicionário (xcfe4-dict)
+* File Roller
 * Firefox
 * Gigolo
-* Gimp
+* GIMP
+* GTK Settings
 * Jogos
 * LibreOffice
+* Softwares para Impressoras
 * Mousepad
 * Notas (xfce4-notes)
 * Reprodutor de mídia Parole
@@ -23,11 +28,12 @@ Para instalações individuais veja
 * Protetor de Tela (xfce4-screensaver)
 * Sobre mim (mugshot)
 * Scanner de documentos (simple-scan)
-* Terminais (gnome e xterm)
+* Thunar
 * Thunderbird
 * Transmission
 * Visualizador de Documentos Atril
 * Xfburn
+* Yelp
 
 ## Instala
 * Google Chrome
@@ -35,27 +41,24 @@ Para instalações individuais veja
 * FileZilla
 * Git
 * Insomnia
-* Nautilus
+* Nemo
 * Node.js
+* PIP (Python)
 * Spotify
 * Snap
 * VS Code
 * Yarn
 * ZSH e Oh My ZSH
 
-## Configura
-* Tema Dracula
-* Ícones Paper
-* Cursor BMZ White
-* Fontes FiraCode e Noto Color Emoji
-* Configure o resto com o uso (manual)
-** Credênciais fornecidas no ´git´ serão salvas de maneira global.
-** Ao abrir o VS Code, configure Settings Sync.
+## Configurações manuais
+* **VS Code:** Configure Settings Sync.
+* **Insomnia:** Selecionar Dracula como tema.
+* **Git:** Credênciais fornecidas serão salvas de maneira global.
 
 ## Execução
-No terminal de sua opção, execute a única linha abaixo. O sistema será **reiniciado** ao final.
+No terminal de sua preferência, execute a única linha abaixo. O sistema será **reiniciado** ao final.
 ```
-cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./run.sh && ./run.sh
+cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip -q ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./run.sh && ./run.sh
 ```
 
 ## Links

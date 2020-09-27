@@ -12,9 +12,7 @@ rm ~/Downloads/google-chrome-stable_current_amd64.deb
 rm ~/Downloads/dracula_gtk.zip
 rm ~/Downloads/dracula_insomnia.zip
 rm ~/Downloads/dracula_wps.zip
-
-# Remove dependências não mais necessárias
-sudo apt-get -q -y autoremove --purge
+rm ~/Downloads/faker_insomnia.zip
 
 # Limpa pacotes
 sudo apt-get -q -y clean

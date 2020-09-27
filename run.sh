@@ -1,10 +1,10 @@
 #!/bin/bash
 
-chmod +x ./inc -R
-./inc/uninstall.sh
-./inc/update.sh
-./inc/install.sh
-./inc/config.sh
-./inc/clear.sh
+chmod +x -R ~/Downloads/DraculaMyXubuntu-master/inc
+~/Downloads/DraculaMyXubuntu-master/inc/uninstall.sh
+~/Downloads/DraculaMyXubuntu-master/inc/update.sh
+~/Downloads/DraculaMyXubuntu-master/inc/install.sh
+~/Downloads/DraculaMyXubuntu-master/inc/config.sh
+~/Downloads/DraculaMyXubuntu-master/inc/clear.sh
 echo "Finalizado. Reiniciando..."
 reboot
