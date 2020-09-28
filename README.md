@@ -1,3 +1,5 @@
+![Captura de Tela](files/screenshot.png)
+
 # DraculaMyXubuntu
 
 Um *bash script* para fazer todas as instalações, configurações e desinstalações iniciais
@@ -28,7 +30,6 @@ Para instalações individuais veja:
 * Protetor de Tela (xfce4-screensaver)
 * Sobre mim (mugshot)
 * Scanner de documentos (simple-scan)
-* Thunar
 * Thunderbird
 * Transmission
 * Visualizador de Documentos Atril

@@ -17,6 +17,9 @@ rm ~/Downloads/faker_insomnia.zip
 # Limpa pacotes
 sudo apt-get -q -y clean
 
+# Remove dependências não mais necessárias
+sudo apt-get -q -y autoremove
+
 # Limpa cache
 sudo apt-get -q -y autoclean
 
