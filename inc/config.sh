@@ -1,48 +1,60 @@
 #!/bin/bash
 
 # Cria Apps
-mkdir -p ~/Apps
+mkdir -p $HOME/Apps
 
 # Git Credentials
 git config --global credential.helper store
 
 # VS Code - Instalal Extenção Settings Sync
 code --install-extension shan.code-settings-sync
+code --install-extension dracula-theme.theme-dracula
+echo '{"workbench.colorTheme": "Dracula Soft"}' > $HOME/.config/Code/User/settings.json
 
 # Dracula - Tema
-wget -q https://github.com/dracula/gtk/archive/master.zip -O ~/Downloads/dracula_gtk.zip
-mkdir -p /usr/share/themes/ && unzip -q ~/Downloads/dracula_gtk.zip -d /usr/share/themes/ && mv /usr/share/themes/gtk-master /usr/share/themes/Dracula
+wget -q https://github.com/dracula/gtk/archive/master.zip -O $HOME/Downloads/dracula_gtk.zip
+mkdir -p /usr/share/themes/ && unzip -q $HOME/Downloads/dracula_gtk.zip -d /usr/share/themes/ && mv /usr/share/themes/gtk-master /usr/share/themes/Dracula
 
 # Dracula - Ícone
-mkdir -p /usr/share/themes/Dracula/img
-cp ~/Downloads/DraculaMyXubuntu-master/files/DraculaIcon.png /usr/share/themes/Dracula/img/DraculaIcon.png
-cp -f ~/Downloads/DraculaMyXubuntu-master/files/whiskermenu-1.rc ~/.config/xfce4/panel/whiskermenu-1.rc
+mkdir -p /usr/share/themes/Dracula/img && cp $FILES/DraculaIcon.png /usr/share/themes/Dracula/img/
+cp -f $FILES/whiskermenu-1.rc $HOME/.config/xfce4/panel/
+
+# Dracula - Avatar
+cp $FILES/DraculaIcon.png $HOME/ && mv DraculaIcon.png .face
 
 # Dracula - Wallpaper
-wget -q https://github.com/dracula/wallpaper/archive/master.zip -O ~/Downloads/dracula_wps.zip
-unzip -qj ~/Downloads/dracula_wps.zip wallpaper-master/xubuntu.png -d /usr/share/themes/Dracula/img/
+wget -q https://github.com/dracula/wallpaper/archive/master.zip -O $HOME/Downloads/dracula_wps.zip
+unzip -qj $HOME/Downloads/dracula_wps.zip wallpaper-master/xubuntu.png -d /usr/share/themes/Dracula/img/
 
 # Configura programas padrões
-mkdir -p ~/.local/share/applications/ && cp ~/Downloads/DraculaMyXubuntu-master/files/mimeapps.list ~/.local/share/applications/mimeapps.list
+mkdir -p $HOME/.local/share/applications/ && cp $FILES/mimeapps.list $HOME/.local/share/applications/
 
 # Dracula - Terminal
-mkdir -p ~/.local/share/xfce4/terminal/colorschemes && cp ~/Downloads/DraculaMyXubuntu-master/files/Dracula.theme ~/.local/share/xfce4/terminal/colorschemes/Dracula.theme
-mkdir -p ~/.config/xfce4/terminal && cp ~/Downloads/DraculaMyXubuntu-master/files/terminalrc ~/.config/xfce4/terminal/terminalrc
+mkdir -p $HOME/.local/share/xfce4/terminal/colorschemes && cp $FILES/Dracula.theme $HOME/.local/share/xfce4/terminal/colorschemes/
+mkdir -p $HOME/.config/xfce4/terminal && cp $FILES/terminalrc $HOME/.config/xfce4/terminal/
 
 # BMZ White - Cursor
-mkdir -p ~/.icons/ && tar -xf ~/Downloads/DraculaMyXubuntu-master/files/BMZ-white-20191018164535.tar.gz -C ~/.icons/
+mkdir -p $HOME/.icons/ && tar -xf $FILES/BMZ-white-20191018164535.tar.gz -C $HOME/.icons/
 
 # FileZilla
-cp -f ~/Downloads/DraculaMyXubuntu-master/files/filezilla.xml ~/.config/filezilla/filezilla.xml
+cp -f $FILES/filezilla.xml $HOME/.config/filezilla/
 
 # Insomnia - Dracula
-wget -q https://github.com/dracula/insomnia/archive/master.zip -O ~/Downloads/dracula_insomnia.zip
-mkdir -p ~/.config/Insomnia/plugins/ && unzip -q ~/Downloads/dracula_insomnia.zip -d ~/.config/Insomnia/plugins/
+wget -q https://github.com/dracula/insomnia/archive/master.zip -O $HOME/Downloads/dracula_insomnia.zip
+mkdir -p $HOME/.config/Insomnia/plugins/ && unzip -q $HOME/Downloads/dracula_insomnia.zip -d $HOME/.config/Insomnia/plugins/
 
 # Insomnia - Faker
-wget -q https://github.com/bbbco/insomnia-plugin-faker/archive/master.zip -O ~/Downloads/faker_insomnia.zip
-unzip -q ~/Downloads/faker_insomnia.zip -d ~/.config/Insomnia/plugins/
-npm install --prefix ~/.config/Insomnia/plugins/insomnia-plugin-faker-master
+wget -q https://github.com/bbbco/insomnia-plugin-faker/archive/master.zip -O $HOME/Downloads/faker_insomnia.zip
+unzip -q $HOME/Downloads/faker_insomnia.zip -d $HOME/.config/Insomnia/plugins/
+npm install --prefix $HOME/.config/Insomnia/plugins/insomnia-plugin-faker-master
+
+# Fix: Insomnia - Icon
+cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
+
+# Setar ZSH como padrão
+cp -f $FILES/.zshrc $HOME/
+cp -f $FILES/.p10k.zsh $HOME/
+sudo chsh -s /bin/zsh
 
 # BMZ White - Cursor
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "BMZ-white"
@@ -75,6 +87,9 @@ xfconf-query -c xfce4-desktop -p /desktop-icons/style -s 0
 
 # Remove Alt em Acessibilidade das janelas
 xfconf-query -c xfwm4 -p /general/easy_click -s None
+
+# Remove barra Título quando maximizadas
+xfconf-query -c xfwm4 -p /general/titleless_maximize -s true
 
 # Configura opacidade da decoração da janela
 xfconf-query -c xfwm4 -p /general/frame_opacity -s 70
@@ -117,7 +132,7 @@ xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -t int -s 1 -t int -s 
 
 # Gnome Settings
 gsettings set org.gnome.crypto.cache gpg-cache-method always
-gsettings set org.cinnamon.desktop.applications.terminal exec xfce4-terminal
+gsettings set org.cinnamon.desktop.default-applications.terminal exec 'xfce4-terminal'
 gsettings set org.nemo.list-view default-zoom-level 'small'
 gsettings set org.nemo.preferences close-device-view-on-device-eject true
 gsettings set org.nemo.preferences quick-renames-with-pause-in-between true
@@ -127,3 +142,10 @@ gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
 gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
 gsettings set org.nemo.preferences thumbnail-limit 3145728
 gsettings set org.nemo.window-state sidebar-width 230
+
+# Programas padrão
+update-alternatives --config x-www-browser
+
+# Novos alias (comandos)
+cp -f $FILES/.bash_aliases $HOME/.bash_aliases
+source $HOME/.bash_aliases
