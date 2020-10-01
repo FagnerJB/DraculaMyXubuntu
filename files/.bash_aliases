@@ -1,4 +1,5 @@
 alias lll='ls -alF'
+alias do-update='sudo apt -q update && sudo apt upgrade -qy && sudo apt -qy autoremove'
 alias gp='git push'
 alias ga='git add'
 alias gaa='git add -A'

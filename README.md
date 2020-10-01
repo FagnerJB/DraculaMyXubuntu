@@ -50,7 +50,7 @@ Para instalações individuais veja:
 * ZSH, Oh My ZSH e Powerlevel10k
 
 ## Comandos (alias)
-Veja a [lista de todos os atalhos](/ALIAS.md) de comandos são criados. Para mais detalhes veja os arquivos [.bash_alias](/files/.bash_alias) e .[bash_profile](/files/.bash_profile).
+Veja a [lista de todos os atalhos](/ALIASES.md) de comandos são criados. Para mais detalhes, veja os arquivos [.bash_aliases](/files/.bash_aliases) e .[bash_profile](/files/.bash_profile).
 
 ## Configurações manuais
 * **VS Code:** Configure Settings Sync.
@@ -60,7 +60,7 @@ Veja a [lista de todos os atalhos](/ALIAS.md) de comandos são criados. Para mai
 ## A fazer
 [ ] Configurar tecla SUPER (Win)
 [ ] Arrumar Ícone Insomnia
-[ ] Definir como padrão no exo Chrome, Nemo e Gmail
+[ ] Definir como padrão Chrome, Nemo e Gmail
 
 ## Execução
 No terminal de sua preferência, execute a única linha abaixo. O sistema será **reiniciado** ao final.
