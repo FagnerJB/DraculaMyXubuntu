@@ -50,25 +50,7 @@ Para instalações individuais veja:
 * ZSH, Oh My ZSH e Powerlevel10k
 
 ## Comandos (alias)
-| Atalho | Comando | Atalho | Comando |
-|----|---------|---|---|
-| lll | ls -alF |
-| gp | git push | new-react <pasta> | yarn create react-app |
-| ga | git add | new-native <pasta> | yarn create react-native-app |
-| gaa | git add -A | new-next <pasta> | yarn create next-app |
-| gst | git status | new-express <pasta> | yarn init -y && yarn add express cors |
-| gcl | git clone | new-koa <pasta> | yarn init -y && yarn add koa |
-| gpa | git pull --all | new-expo <pasta> | expo init |
-| gfa | git fetch --all |  |   |
-| grv | git remote -v |  |   |
-| gcm | git commit -m |  |   |
-| gacm | git commit -am |  |   |
-| gpor | git push --all origin |  |   |
-| gpup | git pull --all upstream |   |   |
-| gfup | git fetch --all upstream |   |   |
-| grau | git remote add upstream |   |   |
-
-Veja mais detalhes em .bash_alias e .bash_profile.
+Veja a [lista de todos os atalhos](/ALIAS.md) de comandos são criados. Para mais detalhes veja os arquivos [.bash_alias](/files/.bash_alias) e .[bash_profile](/files/.bash_profile).
 
 ## Configurações manuais
 * **VS Code:** Configure Settings Sync.

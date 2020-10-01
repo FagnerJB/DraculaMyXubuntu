@@ -51,6 +51,10 @@ npm install --prefix $HOME/.config/Insomnia/plugins/insomnia-plugin-faker-master
 # Fix: Insomnia - Icon
 cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
 
+# Novos alias (comandos)
+cp -f $FILES/.bash_aliases $HOME/.bash_aliases
+cp -f $FILES/.bash_profile $HOME/.bash_profile
+
 # Setar ZSH como padrão
 cp -f $FILES/.zshrc $HOME/
 cp -f $FILES/.p10k.zsh $HOME/
@@ -145,7 +149,3 @@ gsettings set org.nemo.window-state sidebar-width 230
 
 # Programas padrão
 update-alternatives --config x-www-browser
-
-# Novos alias (comandos)
-cp -f $FILES/.bash_aliases $HOME/.bash_aliases
-source $HOME/.bash_aliases

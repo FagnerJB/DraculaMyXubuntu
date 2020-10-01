@@ -38,6 +38,22 @@ new-next(){
     fi
 }
 
+new-node(){
+    if [ -z "$1" ]
+    then
+        echo "Use o formato: new-node <nome>"
+    else
+        mkdir $HOME/Apps/$1
+        cd $HOME/Apps/$1
+        git init
+        mkdir src
+        touch index.js
+        echo "node_modules" > .gitignore
+        yarn init -y
+        code .
+    fi
+}
+
 new-express(){
     if [ -z "$1" ]
     then
@@ -61,12 +77,11 @@ app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
 })
 EOL
-        echo "**/node_modules" > .gitignore
+        echo "node_modules" > .gitignore
         yarn init -y
         yarn add express cors
         yarn add -D nodemon
         code .
-        node index.js
     fi
 }
 
@@ -90,12 +105,11 @@ app.use(async ctx => {
 
 app.listen(3000)
 EOL
-        echo "**/node_modules" > .gitignore
+        echo "node_modules" > .gitignore
         yarn init -y
         yarn add koa @koa/cors
         yarn add -D nodemon
         code .
-        node index.js
     fi
 }
 
@@ -112,11 +126,11 @@ new-expo(){
     fi
 }
 
-sendmail(){
+gmail(){
     if [ -z $1 ]
     then
         echo "Use o formato: gmail <email>"
     else
-        exo-open --launch WebBrowser mailto:$1
+        google-chrome "https://mail.google.com/mail?view=cm&tf=0&to=$(echo $1 | sed 's/mailto://')"
     fi
 }
