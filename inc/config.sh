@@ -1,5 +1,7 @@
 #!/bin/bash
 
+FILES=$HOME/Downloads/DraculaMyXubuntu-master/files
+
 # Cria Apps
 mkdir -p $HOME/Apps
 
@@ -13,10 +15,12 @@ echo '{"workbench.colorTheme": "Dracula Soft"}' > $HOME/.config/Code/User/settin
 
 # Dracula - Tema
 wget -q https://github.com/dracula/gtk/archive/master.zip -O $HOME/Downloads/dracula_gtk.zip
-mkdir -p /usr/share/themes/ && unzip -q $HOME/Downloads/dracula_gtk.zip -d /usr/share/themes/ && mv /usr/share/themes/gtk-master /usr/share/themes/Dracula
+mkdir -p /usr/share/themes/ && sudo unzip -q $HOME/Downloads/dracula_gtk.zip -d /usr/share/themes/ && sudo mv /usr/share/themes/gtk-master /usr/share/themes/Dracula
 
 # Dracula - Ícone
-mkdir -p /usr/share/themes/Dracula/img && cp $FILES/DraculaIcon.png /usr/share/themes/Dracula/img/
+sudo mkdir -p /usr/share/themes/Dracula/img && sudo cp $FILES/DraculaIcon.png /usr/share/themes/Dracula/img/
+
+# Dracula - Terminal
 cp -f $FILES/whiskermenu-1.rc $HOME/.config/xfce4/panel/
 
 # Dracula - Avatar
@@ -24,7 +28,7 @@ cp $FILES/DraculaIcon.png $HOME/ && mv DraculaIcon.png .face
 
 # Dracula - Wallpaper
 wget -q https://github.com/dracula/wallpaper/archive/master.zip -O $HOME/Downloads/dracula_wps.zip
-unzip -qj $HOME/Downloads/dracula_wps.zip wallpaper-master/xubuntu.png -d /usr/share/themes/Dracula/img/
+sudo unzip -qj $HOME/Downloads/dracula_wps.zip wallpaper-master/xubuntu.png -d /usr/share/themes/Dracula/img/
 
 # Configura programas padrões
 mkdir -p $HOME/.local/share/applications/ && cp $FILES/mimeapps.list $HOME/.local/share/applications/
@@ -49,15 +53,20 @@ unzip -q $HOME/Downloads/faker_insomnia.zip -d $HOME/.config/Insomnia/plugins/
 npm install --prefix $HOME/.config/Insomnia/plugins/insomnia-plugin-faker-master
 
 # Fix: Insomnia - Icon
-cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
+sudo cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
+
+# Fontes
+cp $HOME/Downloads/fonts/*
 
 # Novos alias (comandos)
 cp -f $FILES/.bash_aliases $HOME/.bash_aliases
 cp -f $FILES/.bash_profile $HOME/.bash_profile
 
-# Setar ZSH como padrão
+# ZSH
 cp -f $FILES/.zshrc $HOME/
 cp -f $FILES/.p10k.zsh $HOME/
+
+# ZSH como padrão
 sudo chsh -s /bin/zsh
 
 # BMZ White - Cursor
@@ -146,6 +155,3 @@ gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
 gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
 gsettings set org.nemo.preferences thumbnail-limit 3145728
 gsettings set org.nemo.window-state sidebar-width 230
-
-# Programas padrão
-update-alternatives --config x-www-browser

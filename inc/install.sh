@@ -45,13 +45,15 @@ wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P $HOME/Downloads/fonts
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P $HOME/Downloads/fonts
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P $HOME/Downloads/fonts
-mkdir $HOME/.fonts && cp $HOME/Downloads/fonts/*.ttf $HOME/Downloads/fonts/*.otf $HOME/.fonts
 
 # FontAwesome
 wget -q https://use.fontawesome.com/releases/v5.14.0/fontawesome-free-5.14.0-desktop.zip -O $HOME/Downloads/fontawesome.zip
 unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.14.0-desktop/otfs/Font\ Awesome\ 5\ Free-Solid-900.otf -d $HOME/Downloads/fonts
 unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.14.0-desktop/otfs/Font\ Awesome\ 5\ Free-Regular-400.otf -d $HOME/Downloads/fonts
 unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.14.0-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf -d $HOME/Downloads/fonts
+
+# Instala Fontes
+mkdir $HOME/.fonts && cp $HOME/Downloads/fonts/*.ttf $HOME/Downloads/fonts/*.otf $HOME/.fonts
 
 # Spotify
 sudo snap install spotify

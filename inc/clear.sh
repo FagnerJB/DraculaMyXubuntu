@@ -12,7 +12,6 @@ rm ~/Downloads/dracula_gtk.zip
 rm ~/Downloads/dracula_insomnia.zip
 rm ~/Downloads/dracula_wps.zip
 rm ~/Downloads/faker_insomnia.zip
-#rm ~/Downloads/composer-setup.php
 rm ~/Downloads/fontawesome.zip
 rm ~/Downloads/google-chrome-stable_current_amd64.deb
 rm -R ~/Downloads/fonts/

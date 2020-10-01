@@ -1,7 +1,12 @@
 #!/bin/bash
 
+echo_string(){
+    printf '\033[35m'
+    echo "${1}... $(date +%T)"
+    printf '\033[m'
+}
+
 INC=$HOME/Downloads/DraculaMyXubuntu-master/inc
-FILES=$HOME/Downloads/DraculaMyXubuntu-master/files
 
 printf '\033[35m'
 cat <<-'EOF'
@@ -19,18 +24,25 @@ cat <<-'EOF'
 EOF
 printf '\033[m'
 
-echo "Iniciando... $(date +%k)"
+echo_string "Iniciando"
 chmod +x -R $INC
-echo "Desinstalando... $(date +%k)"
+
+echo_string "Desinstalando"
 $INC/uninstall.sh
-echo "Atualizando... $(date +%k)"
+
+echo_string "Atualizando"
 $INC/update.sh
-echo "Instalando... $(date +%k)"
+
+echo_string "Instalando"
 $INC/install.sh
-echo "Configurando... $(date +%k)"
+
+echo_string "Configurando"
 $INC/config.sh
-echo "Limpando... $(date +%k)"
+
+echo_string "Limpando"
 $INC/clear.sh
-echo "Finalizado. $(date +%k)"
-echo "Reiniciando..."
+
+echo_string "Finalizado"
+
+echo_string "Reiniciando"
 reboot
