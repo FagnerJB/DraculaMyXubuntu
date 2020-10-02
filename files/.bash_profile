@@ -3,10 +3,10 @@ new-react() {
     then
         echo "Use o formato: new-react <nome>"
     else
-        name = "$1" | tr '[:upper:]' '[:lower:]'
         cd $HOME/Apps
         yarn create react-app $1
         cd $1
+        git init
         code .
     fi
 }
@@ -31,6 +31,7 @@ new-next(){
         cd $HOME/Apps
         yarn create next-app $1
         cd $1
+        git init
         code .
     fi
 }
@@ -45,7 +46,7 @@ new-node(){
         git init
         mkdir src
         touch index.js
-        echo "node_modules" > .gitignore
+        echo "/node_modules" > .gitignore
         yarn init -y
         code .
     fi
@@ -71,10 +72,10 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`)
+  console.log('Listening at http://localhost:' + port)
 })
 EOL
-        echo "node_modules" > .gitignore
+        echo "/node_modules" > .gitignore
         yarn init -y
         yarn add express cors
         yarn add -D nodemon
@@ -102,7 +103,7 @@ app.use(async ctx => {
 
 app.listen(3000)
 EOL
-        echo "node_modules" > .gitignore
+        echo "/node_modules" > .gitignore
         yarn init -y
         yarn add koa @koa/cors
         yarn add -D nodemon
@@ -119,7 +120,6 @@ new-expo(){
         expo init $1
         cd $1
         code .
-        expo start
     fi
 }
 

@@ -3,6 +3,7 @@
 | `lll` | `ls -alF` |
 | `do-update` | `apt update; apt upgrade; apt autoremove` |
 | `gp` | `git push` |
+| `gi` | `git init` |
 | `ga` | `git add` |
 | `gaa` | `git add -A` |
 | `gst` | `git status` |

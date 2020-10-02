@@ -32,7 +32,7 @@ echo_string "Copia Dracula - Terminal"
 cp -f $FILES/whiskermenu-1.rc $HOME/.config/xfce4/panel/
 
 echo_string "Copia Dracula - Avatar"
-cp $FILES/DraculaIcon.png $HOME/ && mv DraculaIcon.png .face
+cp $FILES/DraculaIcon.png $HOME/ && mv $HOME/DraculaIcon.png .face
 
 echo_string "Baixa Dracula - Wallpaper"
 wget -q https://github.com/dracula/wallpaper/archive/master.zip -O $HOME/Downloads/dracula_wps.zip
@@ -63,9 +63,6 @@ npm install --prefix $HOME/.config/Insomnia/plugins/insomnia-plugin-faker-master
 echo_string "Configura Insomnia - Icon"
 sudo cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
 
-echo_string "Instala Fontes"
-cp $HOME/Downloads/fonts/*
-
 echo_string "Copia novos aliases"
 cp -f $FILES/.bash_aliases $HOME/.bash_aliases
 cp -f $FILES/.bash_profile $HOME/.bash_profile
@@ -73,9 +70,6 @@ cp -f $FILES/.bash_profile $HOME/.bash_profile
 echo_string "Configura ZSH"
 cp -f $FILES/.zshrc $HOME/
 cp -f $FILES/.p10k.zsh $HOME/
-
-echo_string "Configura ZSH como padrão"
-sudo chsh -s /bin/zsh
 
 echo_string "Configura BMZ White - Cursor"
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "BMZ-white"
@@ -97,11 +91,11 @@ xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/s
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /usr/share/themes/Dracula/img/xubuntu.png
 
 echo_string "Configura 2ª Espaço de trabalho"
-xfconf-query -c xfwm4 -p /general/workspace_count -s 2
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/last-image -t string -s /usr/share/themes/Dracula/img/xubuntu.png
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/image-style -t int -s 5
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/color-style -t int -s 0
 xfconf-query -c xfwm4 -p /general/workspace_names -t string -s "🟪" -t string -s "🟩"
+xfconf-query -c xfwm4 -p /general/workspace_count -s 2
 
 echo_string "Configura Remove ícones área de trabalho"
 xfconf-query -c xfce4-desktop -p /desktop-icons/style -s 0
