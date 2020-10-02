@@ -1,116 +1,124 @@
 #!/bin/bash
 
+echo_string(){
+    printf '\033[35m'
+    echo "${1}  $(date +%T)"
+    printf '\033[m'
+}
+
 FILES=$HOME/Downloads/DraculaMyXubuntu-master/files
 
-# Cria Apps
+echo_string "Cria Pasta Apps"
 mkdir -p $HOME/Apps
 
-# Git Credentials
+echo_string "Configura Git Credentials"
 git config --global credential.helper store
 
-# VS Code - Instalal Extenção Settings Sync
+echo_string "Instalal Extenções VS Code - Settings Sync e Dracula"
 code --install-extension shan.code-settings-sync
 code --install-extension dracula-theme.theme-dracula
+
+echo_string "Dracula - VS Code"
 echo '{"workbench.colorTheme": "Dracula Soft"}' > $HOME/.config/Code/User/settings.json
 
-# Dracula - Tema
+echo_string "Baixa Dracula - Tema"
 wget -q https://github.com/dracula/gtk/archive/master.zip -O $HOME/Downloads/dracula_gtk.zip
 mkdir -p /usr/share/themes/ && sudo unzip -q $HOME/Downloads/dracula_gtk.zip -d /usr/share/themes/ && sudo mv /usr/share/themes/gtk-master /usr/share/themes/Dracula
 
-# Dracula - Ícone
+echo_string "Copia Dracula - Ícone"
 sudo mkdir -p /usr/share/themes/Dracula/img && sudo cp $FILES/DraculaIcon.png /usr/share/themes/Dracula/img/
 
-# Dracula - Terminal
+echo_string "Copia Dracula - Terminal"
 cp -f $FILES/whiskermenu-1.rc $HOME/.config/xfce4/panel/
 
-# Dracula - Avatar
+echo_string "Copia Dracula - Avatar"
 cp $FILES/DraculaIcon.png $HOME/ && mv DraculaIcon.png .face
 
-# Dracula - Wallpaper
+echo_string "Baixa Dracula - Wallpaper"
 wget -q https://github.com/dracula/wallpaper/archive/master.zip -O $HOME/Downloads/dracula_wps.zip
 sudo unzip -qj $HOME/Downloads/dracula_wps.zip wallpaper-master/xubuntu.png -d /usr/share/themes/Dracula/img/
 
-# Configura programas padrões
+echo_string "Configura programas padrões"
 mkdir -p $HOME/.local/share/applications/ && cp $FILES/mimeapps.list $HOME/.local/share/applications/
 
-# Dracula - Terminal
+echo_string "Configura Dracula - Terminal"
 mkdir -p $HOME/.local/share/xfce4/terminal/colorschemes && cp $FILES/Dracula.theme $HOME/.local/share/xfce4/terminal/colorschemes/
 mkdir -p $HOME/.config/xfce4/terminal && cp $FILES/terminalrc $HOME/.config/xfce4/terminal/
 
-# BMZ White - Cursor
+echo_string "Copia BMZ White - Cursor"
 mkdir -p $HOME/.icons/ && tar -xf $FILES/BMZ-white-20191018164535.tar.gz -C $HOME/.icons/
 
-# FileZilla
+echo_string "Configura FileZilla"
 cp -f $FILES/filezilla.xml $HOME/.config/filezilla/
 
-# Insomnia - Dracula
+echo_string "Copia Insomnia - Dracula"
 wget -q https://github.com/dracula/insomnia/archive/master.zip -O $HOME/Downloads/dracula_insomnia.zip
 mkdir -p $HOME/.config/Insomnia/plugins/ && unzip -q $HOME/Downloads/dracula_insomnia.zip -d $HOME/.config/Insomnia/plugins/
 
-# Insomnia - Faker
+echo_string "Copia Insomnia - Faker"
 wget -q https://github.com/bbbco/insomnia-plugin-faker/archive/master.zip -O $HOME/Downloads/faker_insomnia.zip
 unzip -q $HOME/Downloads/faker_insomnia.zip -d $HOME/.config/Insomnia/plugins/
 npm install --prefix $HOME/.config/Insomnia/plugins/insomnia-plugin-faker-master
 
-# Fix: Insomnia - Icon
+echo_string "Configura Insomnia - Icon"
 sudo cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
 
-# Fontes
+echo_string "Instala Fontes"
 cp $HOME/Downloads/fonts/*
 
-# Novos alias (comandos)
+echo_string "Copia novos aliases"
 cp -f $FILES/.bash_aliases $HOME/.bash_aliases
 cp -f $FILES/.bash_profile $HOME/.bash_profile
 
-# ZSH
+echo_string "Configura ZSH"
 cp -f $FILES/.zshrc $HOME/
 cp -f $FILES/.p10k.zsh $HOME/
 
-# ZSH como padrão
+echo_string "Configura ZSH como padrão"
 sudo chsh -s /bin/zsh
 
-# BMZ White - Cursor
+echo_string "Configura BMZ White - Cursor"
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "BMZ-white"
 
-# Paper Icon
+echo_string "Configura Paper Icon"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Paper"
 xfconf-query -c xsettings -p /Net/FallbackIconTheme -s "elementary-xfce-dark"
 
-# Dracula - Tema
+echo_string "Configura Dracula - Tema"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Dracula"
 xfconf-query -c xfwm4 -p /general/theme -s "Dracula"
 xfconf-query -c xfce4-notifyd -p /theme -s "Dracula"
 
-# FiraCode (font)
+echo_string "Configura FiraCode (font)"
 xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "FiraCode Regular 12"
 
-# Dracula - Wallpaper
+echo_string "Configura Dracula - Wallpaper"
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/share/themes/Dracula/img/xubuntu.png
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /usr/share/themes/Dracula/img/xubuntu.png
 
-# Configura 2ª Espaço de trabalho
+echo_string "Configura 2ª Espaço de trabalho"
 xfconf-query -c xfwm4 -p /general/workspace_count -s 2
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/last-image -t string -s /usr/share/themes/Dracula/img/xubuntu.png
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/image-style -t int -s 5
 xfconf-query -c xfce4-desktop -np /backdrop/screen0/monitorVirtual1/workspace1/color-style -t int -s 0
 xfconf-query -c xfwm4 -p /general/workspace_names -t string -s "🟪" -t string -s "🟩"
 
-# Remove ícones área de trabalho
+echo_string "Configura Remove ícones área de trabalho"
 xfconf-query -c xfce4-desktop -p /desktop-icons/style -s 0
 
-# Remove Alt em Acessibilidade das janelas
+echo_string "Configura Remove Alt em Acessibilidade das janelas"
 xfconf-query -c xfwm4 -p /general/easy_click -s None
 
-# Remove barra Título quando maximizadas
+echo_string "Configura Remove barra Título quando maximizadas"
 xfconf-query -c xfwm4 -p /general/titleless_maximize -s true
 
-# Configura opacidade da decoração da janela
+echo_string "Configura opacidade da decoração da janela"
 xfconf-query -c xfwm4 -p /general/frame_opacity -s 70
 
-# Remove Ícone Menu Janela
+echo_string "Configura Remove Ícone Menu Janela"
 xfconf-query -c xfwm4 -p /general/button_layout -s "|HMC"
 
-# Configurações de energia
+echo_string "Configura energia"
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/blank-on-ac -s 5
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-on-ac-off -s 0
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-on-ac-sleep -s 30
@@ -118,7 +126,7 @@ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/sleep-button-action 
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 4
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false
 
-# Configura Panel
+echo_string "Configura Panel"
 xfconf-query -c xfce4-panel -np /plugins/plugin-5 -t string -s 'systray'
 xfconf-query -c xfce4-panel -np /plugins/plugin-7 -t string -s 'indicator'
 xfconf-query -c xfce4-panel -np /plugins/plugin-14 -t string -s 'actions'
@@ -143,7 +151,7 @@ xfconf-query -c xfce4-panel -np /plugins/plugin-16/workspace-scrolling -t bool -
 xfconf-query -c xfce4-panel -p /panels/panel-0/size -s 28
 xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -t int -s 1 -t int -s 2 -t int -s 3 -t int -s 4 -t int -s 16 -t int -s 5 -t int -s 6 -t int -s 7 -t int -s 8 -t int -s 10 -t int -s 11 -t int -s 12 -t int -s 14
 
-# Gnome Settings
+echo_string "Configura Gnome"
 gsettings set org.gnome.crypto.cache gpg-cache-method always
 gsettings set org.cinnamon.desktop.default-applications.terminal exec 'xfce4-terminal'
 gsettings set org.nemo.list-view default-zoom-level 'small'

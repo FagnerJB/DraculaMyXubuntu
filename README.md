@@ -1,6 +1,6 @@
 ![Captura de Tela](files/screenshot.png)
 
-# DraculaMyXubuntu
+# DraculaMyXubuntu (DMX)
 
 Um *bash script* para fazer todas as instalações, configurações e desinstalações iniciais
 no Xubuntu 20.04 para um ambiente de desenvolvimento leve.
@@ -25,7 +25,6 @@ Para instalações individuais veja:
 * Notas (xfce4-notes)
 * Reprodutor de mídia Parole
 * Pidgin
-* Protetor de Tela (xfce4-screensaver)
 * Sobre mim (mugshot)
 * Scanner de documentos (simple-scan)
 * Thunderbird
@@ -49,7 +48,7 @@ Para instalações individuais veja:
 * VS Code
 * ZSH, Oh My ZSH e Powerlevel10k
 
-## Comandos (alias)
+## Aliases (Atalhos de comandos)
 Veja a [lista de todos os atalhos](/ALIASES.md) de comandos são criados. Para mais detalhes, veja os arquivos [.bash_aliases](/files/.bash_aliases) e .[bash_profile](/files/.bash_profile).
 
 ## Configurações manuais
@@ -58,9 +57,9 @@ Veja a [lista de todos os atalhos](/ALIASES.md) de comandos são criados. Para m
 * **Git:** Credênciais fornecidas serão salvas de maneira global.
 
 ## A fazer
-[ ] Configurar tecla SUPER (Win)
-[ ] Arrumar Ícone Insomnia
-[ ] Definir como padrão Chrome, Nemo e Gmail
+* [ ] Configurar tecla SUPER (Win)
+* [ ] Arrumar Ícone Insomnia
+* [ ] Definir como padrão Chrome, Nemo e Gmail
 
 ## Execução
 No terminal de sua preferência, execute a única linha abaixo. O sistema será **reiniciado** ao final.

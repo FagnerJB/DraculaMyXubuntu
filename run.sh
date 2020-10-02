@@ -2,7 +2,7 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}... $(date +%T)"
+    echo "${1}  $(date +%T)"
     printf '\033[m'
 }
 
@@ -24,25 +24,25 @@ cat <<-'EOF'
 EOF
 printf '\033[m'
 
-echo_string "Iniciando"
+echo_string "[ Iniciando ]"
 chmod +x -R $INC
 
-echo_string "Desinstalando"
+echo_string "[ Desinstalando ]"
 $INC/uninstall.sh
 
-echo_string "Atualizando"
+echo_string "[ Atualizando ]"
 $INC/update.sh
 
-echo_string "Instalando"
+echo_string "[ Instalando ]"
 $INC/install.sh
 
-echo_string "Configurando"
+echo_string "[ Configurando ]"
 $INC/config.sh
 
-echo_string "Limpando"
+echo_string "[ Limpando ]"
 $INC/clear.sh
 
-echo_string "Finalizado"
+echo_string "[ Finalizado! ]"
 
-echo_string "Reiniciando"
+echo_string "[ Reiniciando ]"
 reboot

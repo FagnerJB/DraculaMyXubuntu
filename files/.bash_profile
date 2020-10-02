@@ -8,7 +8,6 @@ new-react() {
         yarn create react-app $1
         cd $1
         code .
-        yarn start
     fi
 }
 
@@ -21,7 +20,6 @@ new-native(){
         yarn create react-native-app $1
         cd $1
         code .
-        yarn web
     fi
 }
 
@@ -34,7 +32,6 @@ new-next(){
         yarn create next-app $1
         cd $1
         code .
-        yarn dev
     fi
 }
 
