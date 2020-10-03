@@ -2,8 +2,7 @@
 
 # DraculaMyXubuntu (DMX)
 
-Um *bash script* para fazer todas as instalações, configurações e desinstalações iniciais
-no Xubuntu 20.04 para um ambiente de desenvolvimento leve.
+Um *bash script* para fazer todas as instalações, configurações e desinstalações iniciais no Xubuntu 20.04 para um ambiente de desenvolvimento leve e pessoal.
 
 Este código foi desenvolvido para sistemas recém-instalados.
 Não nos responsabilizamos pelo sua execução em outras circunstâncias.

@@ -2,7 +2,7 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}   (㇏(•̀ᵥᵥ•́)ノ)   $(date +%T)"
+    echo "${1} / $(date +%T) / (㇏(•̀ᵥᵥ•́)ノ)"
     printf '\033[m'
 }
 
@@ -126,7 +126,7 @@ echo_string "Configura energia"
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/blank-on-ac -s 5
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-on-ac-off -s 0
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/dpms-on-ac-sleep -s 30
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/sleep-button-action -s 3
+xfconf-query -c xfce4-power-manager -np /xfce4-power-manager/sleep-button-action -t string -s 3
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/power-button-action -s 4
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false
 
