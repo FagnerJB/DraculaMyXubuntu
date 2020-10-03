@@ -2,7 +2,7 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}  $(date +%T)"
+    echo "${1}   (㇏(•̀ᵥᵥ•́)ノ)   $(date +%T)"
     printf '\033[m'
 }
 
@@ -32,7 +32,7 @@ echo_string "Copia Dracula - Terminal"
 cp -f $FILES/whiskermenu-1.rc $HOME/.config/xfce4/panel/
 
 echo_string "Copia Dracula - Avatar"
-cp $FILES/DraculaIcon.png $HOME/ && mv $HOME/DraculaIcon.png .face
+cp $FILES/DraculaIcon.png $HOME/ && mv $HOME/DraculaIcon.png $HOME/.face
 
 echo_string "Baixa Dracula - Wallpaper"
 wget -q https://github.com/dracula/wallpaper/archive/master.zip -O $HOME/Downloads/dracula_wps.zip
@@ -61,7 +61,17 @@ unzip -q $HOME/Downloads/faker_insomnia.zip -d $HOME/.config/Insomnia/plugins/
 npm install --prefix $HOME/.config/Insomnia/plugins/insomnia-plugin-faker-master
 
 echo_string "Configura Insomnia - Icon"
-sudo cp $FILES/InsomniaIcon.png /usr/share/themes/Dracula/img/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/16x16/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/16x16@2x/apps
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/24x24/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/24x24@2x/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/32x32/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/32x32@2x/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/48x48/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/48x48@2x/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/512x512/apps/
+sudo cp $FILES/insomnia.png /usr/share/icons/Paper/512x512@2x/apps
+sudo update-icon-caches /usr/share/icons/Paper
 
 echo_string "Copia novos aliases"
 cp -f $FILES/.bash_aliases $HOME/.bash_aliases
@@ -156,4 +166,4 @@ gsettings set org.nemo.preferences show-home-icon-toolbar true
 gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
 gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
 gsettings set org.nemo.preferences thumbnail-limit 3145728
-gsettings set org.nemo.window-state sidebar-width 230
+gsettings set org.nemo.window-state sidebar-width 220

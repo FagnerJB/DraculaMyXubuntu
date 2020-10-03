@@ -2,7 +2,7 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}  $(date +%T)"
+    echo "${1}   (㇏(•̀ᵥᵥ•́)ノ)   $(date +%T)"
     printf '\033[m'
 }
 
@@ -10,7 +10,7 @@ INC=$HOME/Downloads/DraculaMyXubuntu-master/inc
 
 printf '\033[35m'
 cat <<-'EOF'
- ________         (㇏(•̀ᵥᵥ•́)ノ)        \__/
+ ________                            \__/
  \______ \____________    ____  __ __|  | _____
   |    |  \_  __ \__  \ _/ ___\|  |  \  | \__  \
   |    `   \  | \// __ \\  \___|  |  /  |__/ __ \_
@@ -28,19 +28,19 @@ echo_string "[ Iniciando ]"
 chmod +x -R $INC
 
 echo_string "[ Desinstalando ]"
-$INC/uninstall.sh
+$INC/1_uninstall.sh
 
 echo_string "[ Atualizando ]"
-$INC/update.sh
+$INC/2_update.sh
 
 echo_string "[ Instalando ]"
-$INC/install.sh
+$INC/3_install.sh
 
 echo_string "[ Configurando ]"
-$INC/config.sh
+$INC/4_config.sh
 
 echo_string "[ Limpando ]"
-$INC/clear.sh
+$INC/5_clear.sh
 
 echo_string "[ Finalizado! ]"
 

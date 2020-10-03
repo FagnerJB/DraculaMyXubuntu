@@ -2,7 +2,7 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}  $(date +%T)"
+    echo "${1}   (㇏(•̀ᵥᵥ•́)ノ)   $(date +%T)"
     printf '\033[m'
 }
 

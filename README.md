@@ -52,19 +52,19 @@ Para instalações individuais veja:
 Veja a [lista de todos os atalhos](/ALIASES.md) de comandos são criados. Para mais detalhes, veja os arquivos [.bash_aliases](/files/.bash_aliases) e .[bash_profile](/files/.bash_profile).
 
 ## Configurações manuais (por enquanto)
+* **Aplicativos preferidos:** Definir como padrão Chrome e Nemo `nemo %s`.
 * **VS Code:** Configure Settings Sync.
 * **Insomnia:** Selecionar Dracula como tema.
+* **ZSH:** Definir ZSH como padrão `chsh -s /bin/zsh && xfce4-session-logout --logout`.
 * **Git:** Credênciais fornecidas serão salvas de maneira global.
-* **ZSH:** Definir ZSH como padrão `chsh -s /bin/zsh`.
-* **Aplicativos preferidos:** Definir como padrão Chrome, Nemo e Gmail
 
 ## A fazer
 * [ ] Configurar tecla SUPER (Win)
-* [ ] Arrumar Ícone Insomnia
+* [ ] Colocar Gmail como padrão
 
 ## Execução
 No terminal de sua preferência, execute a única linha abaixo. O sistema será **reiniciado** ao final.
-O processo demora cerca de 40 minutos e aumenta o uso de disco em aproximadamente 2.2GB.
+O processo demora cerca de 50 minutos e aumenta o uso de disco em aproximadamente 1.5GB.
 ```
 cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip -q ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./run.sh && ./run.sh
 ```

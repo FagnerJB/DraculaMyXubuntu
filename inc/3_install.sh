@@ -2,9 +2,12 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}  $(date +%T)"
+    echo "${1}   (㇏(•̀ᵥᵥ•́)ノ)   $(date +%T)"
     printf '\033[m'
 }
+
+echo_string "Instalando Paper Icon"
+sudo apt install -qy paper-icon-theme
 
 echo_string "Instalando Snap"
 sudo apt install -qy snapd
@@ -26,9 +29,6 @@ sudo apt install -qy nodejs yarn
 
 echo_string "Instalando ZSH"
 sudo apt install -qy zsh
-
-echo_string "Instalando Paper Icon"
-sudo apt install -qy paper-icon-theme
 
 echo_string "Instalando PHP"
 sudo apt install -qy php
@@ -68,7 +68,7 @@ echo_string "Instalando VS Code"
 sudo snap install code --classic
 
 echo_string "Instalando Arruma dependências"
-sudo apt install -qy -f
+sudo apt install -qyf
 
 echo_string "Instalando Expo-CLI"
 sudo yarn global add expo-cli

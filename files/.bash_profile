@@ -1,7 +1,19 @@
+open(){
+    if [ -z "$1" ]
+    then
+        echo "Use o formato: open <pasta>"
+
+    else
+        cd $HOME/Apps/$1
+        code .
+    fi
+}
+
 new-react() {
     if [ -z "$1" ]
     then
         echo "Use o formato: new-react <nome>"
+
     else
         cd $HOME/Apps
         yarn create react-app $1
@@ -15,6 +27,7 @@ new-native(){
     if [ -z "$1" ]
     then
         echo "Use o formato: new-native <nome>"
+
     else
         cd $HOME/Apps
         yarn create react-native-app $1
@@ -27,6 +40,7 @@ new-next(){
     if [ -z "$1" ]
     then
         echo "Use o formato: new-next <nome>"
+
     else
         cd $HOME/Apps
         yarn create next-app $1
@@ -40,6 +54,7 @@ new-node(){
     if [ -z "$1" ]
     then
         echo "Use o formato: new-node <nome>"
+
     else
         mkdir $HOME/Apps/$1
         cd $HOME/Apps/$1
@@ -56,6 +71,7 @@ new-express(){
     if [ -z "$1" ]
     then
         echo "Use o formato: new-express <nome>"
+
     else
         mkdir $HOME/Apps/$1
         cd $HOME/Apps/$1
@@ -87,6 +103,7 @@ new-koa(){
     if [ -z "$1" ]
     then
         echo "Use o formato: new-koa <nome>"
+
     else
         mkdir $HOME/Apps/$1
         cd $HOME/Apps/$1
@@ -115,6 +132,7 @@ new-expo(){
     if [ -z "$1" ]
     then
         echo "Use o formato: new-expo <nome>"
+
     else
         cd $HOME/Apps
         expo init $1
@@ -127,6 +145,7 @@ gmail(){
     if [ -z $1 ]
     then
         echo "Use o formato: gmail <email>"
+
     else
         google-chrome "https://mail.google.com/mail?view=cm&tf=0&to=$(echo $1 | sed 's/mailto://')"
     fi
