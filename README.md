@@ -4,7 +4,7 @@
 
 Um *bash script* para fazer todas as instalações, configurações e desinstalações iniciais no Xubuntu 20.04 para um ambiente de desenvolvimento leve e pessoal.
 
-Este código foi desenvolvido para sistemas recém-instalados.
+Este código foi desenvolvido para sistemas recém-instalados.  
 Não nos responsabilizamos pelo sua execução em outras circunstâncias.
 
 Para instalações individuais veja:
@@ -61,8 +61,9 @@ Veja a [lista de todos os atalhos](/ALIASES.md) de comandos são criados. Para m
 * [ ] Colocar Gmail como padrão
 
 ## Execução
-No terminal de sua preferência, execute a única linha abaixo. O sistema será **reiniciado** ao final.
-O processo demora cerca de 50 minutos e aumenta o uso de disco em aproximadamente 1.5GB.
+No terminal de sua preferência, execute a única linha abaixo. O sistema será **reiniciado** ao final.  
+Espere o segundo pedido de senha, após isso o processo não precisa de acompanhamento.  
+A execução total demora cerca de 50 minutos e aumenta o uso de disco em aproximadamente 1.5GB.
 ```
 cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip -q ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./run.sh && ./run.sh
 ```

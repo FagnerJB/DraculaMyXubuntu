@@ -2,7 +2,7 @@
 
 echo_string(){
     printf '\033[35m'
-    echo "${1}   (㇏(•̀ᵥᵥ•́)ノ)   $(date +%T)"
+    echo "{=(=[ ${1} ]=)=}"
     printf '\033[m'
 }
 
@@ -24,28 +24,28 @@ cat <<-'EOF'
 EOF
 printf '\033[m'
 
-echo_string "[ Iniciando ]"
+echo_string "Iniciando"
 chmod +x -R $INC
 
-echo_string "[ Instalando ZSH ]"
+echo_string "ZSH"
 $INC/0_zsh.sh
 
-echo_string "[ Desinstalando ]"
+echo_string "Desinstalando"
 $INC/1_uninstall.sh
 
-echo_string "[ Atualizando ]"
+echo_string "Atualizando"
 $INC/2_update.sh
 
-echo_string "[ Instalando ]"
+echo_string "Instalando"
 $INC/3_install.sh
 
-echo_string "[ Configurando ]"
+echo_string "Configurando"
 $INC/4_config.sh
 
-echo_string "[ Limpando ]"
+echo_string "Limpando"
 $INC/5_clear.sh
 
-echo_string "[ Finalizado! ]"
+echo_string "Finalizado!"
 
-echo_string "[ Reiniciando ]"
+echo_string "Reiniciando"
 reboot
