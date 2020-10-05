@@ -27,9 +27,6 @@ sudo apt install -qy docker-ce docker-ce-cli containerd.io
 echo_string "Instalando Node.js e Yarn"
 sudo apt install -qy nodejs yarn
 
-echo_string "Instalando ZSH"
-sudo apt install -qy zsh
-
 echo_string "Instalando PHP"
 sudo apt install -qy php
 

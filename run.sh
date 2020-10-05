@@ -27,6 +27,9 @@ printf '\033[m'
 echo_string "[ Iniciando ]"
 chmod +x -R $INC
 
+echo_string "[ Instalando ZSH ]"
+$INC/0_zsh.sh
+
 echo_string "[ Desinstalando ]"
 $INC/1_uninstall.sh
 

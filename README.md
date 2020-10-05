@@ -54,7 +54,6 @@ Veja a [lista de todos os atalhos](/ALIASES.md) de comandos são criados. Para m
 * **Aplicativos preferidos:** Definir como padrão Chrome e Nemo `nemo %s`.
 * **VS Code:** Configure Settings Sync.
 * **Insomnia:** Selecionar Dracula como tema.
-* **ZSH:** Definir ZSH como padrão `chsh -s /bin/zsh && xfce4-session-logout --logout`.
 * **Git:** Credênciais fornecidas serão salvas de maneira global.
 
 ## A fazer
