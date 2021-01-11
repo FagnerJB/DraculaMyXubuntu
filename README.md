@@ -68,6 +68,12 @@ A execução total demora cerca de 50 minutos e aumenta o uso de disco em aproxi
 cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip -q ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./run.sh && ./run.sh
 ```
 
+### Somente terminal (WSL)
+Versão experimental que só instala softwares CLI ("terminal").
+```
+cd ~/Downloads && wget -c https://github.com/FagnerJB/DraculaMyXubuntu/archive/master.zip -O ./DMXubuntu.zip && unzip -q ./DMXubuntu.zip && cd DraculaMyXubuntu-master && chmod +x ./only_terminal.sh && ./only_terminal.sh
+```
+
 ## Links
 * [Xubuntu](https://xubuntu.org/download/) - Baixar Xubuntu
 * [VMware Player](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) - Virtualizador recomendado
