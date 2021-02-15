@@ -43,6 +43,13 @@ echo_string "Instalando Google Chrome"
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/Downloads/google-chrome-stable_current_amd64.deb
 sudo dpkg -i $HOME/Downloads/google-chrome-stable_current_amd64.deb
 
+echo_string "Instalando dependências para LocalWP"
+sudo apt install -qy libaio1 libncurses5 libnss3-tools libtinfo5
+
+echo_string "Instalando LocalWP"
+wget -q https://cdn.localwp.com/stable/latest/deb -O $HOME/Downloads/local-lastest-linux.deb
+sudo dpkg -i $HOME/Downloads/local-lastest-linux.deb
+
 echo_string "Baixando MesloLGS NF"
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P $HOME/Downloads/fonts
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P $HOME/Downloads/fonts

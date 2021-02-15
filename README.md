@@ -37,6 +37,7 @@ Para instalações individuais veja:
 * Docker
 * FileZilla
 * Git
+* LocalWP
 * Insomnia
 * Nemo
 * Node.js, Expo-CLI e Yarn

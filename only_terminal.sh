@@ -32,7 +32,7 @@ echo_string "Instala dependencias ao apt"
 sudo apt install -qy apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
 echo_string "Node.js - Adiciona repositório"
-curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
 echo_string "Yarn - Adiciona repositório"
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
