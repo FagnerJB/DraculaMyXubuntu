@@ -24,8 +24,15 @@ sudo apt install -qy git
 echo_string "Instalando Docker"
 sudo apt install -qy docker-ce docker-ce-cli containerd.io
 
-echo_string "Instalando Node.js e Yarn"
-sudo apt install -qy nodejs yarn
+echo_string "Instalando NVM"
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+echo_string "Instalando Node.js LTS"
+source ~/.bashrc
+nvm install --lts
+
+echo_string "Instalando Yarn"
+sudo apt install -qy yarn
 
 echo_string "Instalando PHP"
 sudo apt install -qy php

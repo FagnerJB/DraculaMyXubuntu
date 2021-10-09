@@ -16,9 +16,6 @@ echo_string "Docker - Adiciona repositório"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-echo_string "Node.js - Adiciona repositório"
-curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-
 echo_string "Insomnia - Adiciona repositório"
 wget -q -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
