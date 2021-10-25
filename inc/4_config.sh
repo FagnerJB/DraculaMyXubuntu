@@ -8,14 +8,21 @@ echo_string(){
 
 FILES=$HOME/Downloads/DraculaMyXubuntu-master/files
 
+echo_string "Copia novos aliases"
+cp -f $FILES/.bash_aliases $HOME/.bash_aliases
+cp -f $FILES/.bash_profile $HOME/.bash_profile
+
+echo_string "Configura ZSH"
+cp -f $FILES/.zshrc $HOME/
+cp -f $FILES/.p10k.zsh $HOME/
+
 echo_string "Cria Pasta Apps"
 mkdir -p $HOME/Apps
 
 echo_string "Configura Git Credentials"
 git config --global credential.helper store
 
-echo_string "Instalal Extenções VS Code - Settings Sync e Dracula"
-code --install-extension shan.code-settings-sync
+echo_string "Instala Extenções VS Code Dracula"
 code --install-extension dracula-theme.theme-dracula
 
 echo_string "Dracula - VS Code"
@@ -71,15 +78,19 @@ sudo cp $FILES/insomnia.png /usr/share/icons/Paper/48x48/apps/
 sudo cp $FILES/insomnia.png /usr/share/icons/Paper/48x48@2x/apps/
 sudo cp $FILES/insomnia.png /usr/share/icons/Paper/512x512/apps/
 sudo cp $FILES/insomnia.png /usr/share/icons/Paper/512x512@2x/apps
+
+echo_string "Configura Local - Icon"
+sudo cp $FILES/local.png /usr/share/icons/Paper/16x16/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/16x16@2x/apps
+sudo cp $FILES/local.png /usr/share/icons/Paper/24x24/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/24x24@2x/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/32x32/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/32x32@2x/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/48x48/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/48x48@2x/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/512x512/apps/
+sudo cp $FILES/local.png /usr/share/icons/Paper/512x512@2x/apps
 sudo update-icon-caches /usr/share/icons/Paper
-
-echo_string "Copia novos aliases"
-cp -f $FILES/.bash_aliases $HOME/.bash_aliases
-cp -f $FILES/.bash_profile $HOME/.bash_profile
-
-echo_string "Configura ZSH"
-cp -f $FILES/.zshrc $HOME/
-cp -f $FILES/.p10k.zsh $HOME/
 
 echo_string "Configura BMZ White - Cursor"
 xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "BMZ-white"
@@ -112,9 +123,6 @@ xfconf-query -c xfce4-desktop -p /desktop-icons/style -s 0
 
 echo_string "Configura Remove Alt em Acessibilidade das janelas"
 xfconf-query -c xfwm4 -p /general/easy_click -s None
-
-echo_string "Configura Remove barra Título quando maximizadas"
-xfconf-query -c xfwm4 -p /general/titleless_maximize -s true
 
 echo_string "Configura opacidade da decoração da janela"
 xfconf-query -c xfwm4 -p /general/frame_opacity -s 70
@@ -167,3 +175,6 @@ gsettings set org.nemo.preferences show-new-folder-icon-toolbar true
 gsettings set org.nemo.preferences show-open-in-terminal-toolbar true
 gsettings set org.nemo.preferences thumbnail-limit 3145728
 gsettings set org.nemo.window-state sidebar-width 220
+
+echo_string "Configura Nemo como padrão"
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search

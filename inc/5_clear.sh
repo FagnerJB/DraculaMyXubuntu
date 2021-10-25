@@ -21,6 +21,7 @@ rm $HOME/Downloads/faker_insomnia.zip
 rm $HOME/Downloads/fontawesome.zip
 rm $HOME/Downloads/google-chrome-stable_current_amd64.deb
 rm $HOME/Downloads/local-lastest-linux.deb
+rm $HOME/Downloads/insomnia-lastest-linux.deb
 rm -R $HOME/Downloads/fonts/
 
 echo_string "Limpa pacotes"

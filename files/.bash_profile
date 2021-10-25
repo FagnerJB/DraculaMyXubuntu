@@ -128,19 +128,6 @@ EOL
     fi
 }
 
-new-expo(){
-    if [ -z "$1" ]
-    then
-        echo "Use o formato: new-expo <nome>"
-
-    else
-        cd $HOME/Apps
-        expo init $1
-        cd $1
-        code .
-    fi
-}
-
 gmail(){
     if [ -z $1 ]
     then

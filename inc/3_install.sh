@@ -43,9 +43,6 @@ sudo apt install -qy filezilla
 echo_string "Instalando PIP (Python)"
 sudo apt install -qy python3-pip python-is-python3
 
-echo_string "Instalando Insomnia"
-sudo apt install -qy insomnia
-
 echo_string "Instalando Google Chrome"
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/Downloads/google-chrome-stable_current_amd64.deb
 sudo dpkg -i $HOME/Downloads/google-chrome-stable_current_amd64.deb
@@ -57,6 +54,10 @@ echo_string "Instalando LocalWP"
 wget -q https://cdn.localwp.com/stable/latest/deb -O $HOME/Downloads/local-lastest-linux.deb
 sudo dpkg -i $HOME/Downloads/local-lastest-linux.deb
 
+echo_string "Instalando Insomnia"
+wget -q https://updates.insomnia.rest/downloads/ubuntu/latest -O $HOME/Downloads/insomnia-lastest-linux.deb
+sudo dpkg -i $HOME/Downloads/insomnia-lastest-linux.deb
+
 echo_string "Baixando MesloLGS NF"
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P $HOME/Downloads/fonts
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P $HOME/Downloads/fonts
@@ -64,10 +65,10 @@ wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P $HOME/Downloads/fonts
 
 echo_string "Baixando FontAwesome"
-wget -q https://use.fontawesome.com/releases/v5.14.0/fontawesome-free-5.14.0-desktop.zip -O $HOME/Downloads/fontawesome.zip
-unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.14.0-desktop/otfs/Font\ Awesome\ 5\ Free-Solid-900.otf -d $HOME/Downloads/fonts
-unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.14.0-desktop/otfs/Font\ Awesome\ 5\ Free-Regular-400.otf -d $HOME/Downloads/fonts
-unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.14.0-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf -d $HOME/Downloads/fonts
+wget -q https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-desktop.zip -O $HOME/Downloads/fontawesome.zip
+unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.15.4-desktop/otfs/Font\ Awesome\ 5\ Free-Solid-900.otf -d $HOME/Downloads/fonts
+unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.15.4-desktop/otfs/Font\ Awesome\ 5\ Free-Regular-400.otf -d $HOME/Downloads/fonts
+unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.15.4-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf -d $HOME/Downloads/fonts
 
 echo_string "Instalando Fontes"
 mkdir $HOME/.fonts && cp $HOME/Downloads/fonts/*.ttf $HOME/Downloads/fonts/*.otf $HOME/.fonts
@@ -78,11 +79,8 @@ sudo snap install spotify
 echo_string "Instalando VS Code"
 sudo snap install code --classic
 
-echo_string "Instalando Arruma dependências"
+echo_string "Arrumando dependências"
 sudo apt install -qyf
-
-echo_string "Instalando Expo-CLI"
-sudo yarn global add expo-cli
 
 echo_string "Instalando Oh My ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
