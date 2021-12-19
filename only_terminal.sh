@@ -71,6 +71,10 @@ sudo apt -qy upgrade
 
 FILES=$HOME/Downloads/DraculaMyXubuntu-master/files
 
+echo_string "Copia novos aliases"
+cp -f $FILES/.bash_aliases $HOME/.bash_aliases
+cp -f $FILES/.bash_profile $HOME/.bash_profile
+
 echo_string "Configura ZSH"
 cp -f $FILES/.zshrc $HOME/
 cp -f $FILES/.p10k.zsh $HOME/
