@@ -23,6 +23,9 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 echo_string "Paper Icon - Adiciona repositório"
 sudo add-apt-repository -u -y ppa:snwh/ppa
 
+echo_string "Git - Adiciona repositório"
+sudo add-apt-repository -y ppa:git-core/ppa
+
 echo_string "Atualiza repositórios"
 sudo apt -q update
 
