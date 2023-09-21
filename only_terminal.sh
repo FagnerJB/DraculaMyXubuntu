@@ -31,10 +31,6 @@ chsh -s /bin/zsh
 echo_string "Instala dependencias ao apt"
 sudo apt install -qy apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
-echo_string "Yarn - Adiciona repositório"
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
 echo_string "Atualiza repositórios"
 sudo apt -q update
 
@@ -42,14 +38,11 @@ echo_string "Instalando Git"
 sudo apt install -qy git
 
 echo_string "Instalando NVM"
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 echo_string "Instalando Node.js LTS"
 source ~/.bashrc
 nvm install --lts
-
-echo_string "Instalando Yarn"
-sudo apt install -qy yarn
 
 echo_string "Instalando PIP (Python)"
 sudo apt install -qy python3-pip python-is-python3

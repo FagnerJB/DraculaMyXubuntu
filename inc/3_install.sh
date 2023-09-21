@@ -25,14 +25,11 @@ echo_string "Instalando Docker"
 sudo apt install -qy docker-ce docker-ce-cli containerd.io
 
 echo_string "Instalando NVM"
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 echo_string "Instalando Node.js LTS"
 source ~/.bashrc
 nvm install --lts
-
-echo_string "Instalando Yarn"
-sudo apt install -qy yarn
 
 echo_string "Instalando PHP"
 sudo apt install -qy php
@@ -65,10 +62,10 @@ wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 wget -q https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P $HOME/Downloads/fonts
 
 echo_string "Baixando FontAwesome"
-wget -q https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-desktop.zip -O $HOME/Downloads/fontawesome.zip
-unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.15.4-desktop/otfs/Font\ Awesome\ 5\ Free-Solid-900.otf -d $HOME/Downloads/fonts
-unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.15.4-desktop/otfs/Font\ Awesome\ 5\ Free-Regular-400.otf -d $HOME/Downloads/fonts
-unzip -qj $HOME/Downloads/fontawesome.zip fontawesome-free-5.15.4-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf -d $HOME/Downloads/fonts
+wget -q https://use.fontawesome.com/releases/v6.4.2/fontawesome-free-6.4.2-desktop.zip -O $HOME/Downloads/fontawesome.zip
+unzip -qj $HOME/Downloads/fontawesome.zip "fontawesome-free-6.4.2-desktop/otfs/Font Awesome 6 Free-Solid-900.otf" -d $HOME/Downloads/fonts
+unzip -qj $HOME/Downloads/fontawesome.zip "fontawesome-free-6.4.2-desktop/otfs/Font Awesome 6 Free-Regular-400.otf" -d $HOME/Downloads/fonts
+unzip -qj $HOME/Downloads/fontawesome.zip "fontawesome-free-6.4.2-desktop/otfs/Font Awesome 6 Brands-Regular-400.otf" -d $HOME/Downloads/fonts
 
 echo_string "Instalando Fontes"
 mkdir $HOME/.fonts && cp $HOME/Downloads/fonts/*.ttf $HOME/Downloads/fonts/*.otf $HOME/.fonts

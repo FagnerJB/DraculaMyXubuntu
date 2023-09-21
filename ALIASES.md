@@ -18,11 +18,11 @@
 | `gfup`                | `git fetch --all upstream`                |
 | `grau`                | `git remote add upstream`                 |
 | `gmail <email>`       | `google-chrome mailto:$1`                 |
-| `new-react <pasta>`   | `yarn create react-app`                   |
-| `new-native <pasta>`  | `yarn create react-native-app`            |
-| `new-next <pasta>`    | `yarn create next-app`                    |
-| `new-express <pasta>` | `yarn init -y && yarn add express cors`   |
-| `new-koa <pasta>`     | `yarn init -y && yarn add koa`            |
-| `new-node <pasta>`    | `yarn init -y`                            |
+| `new-react <pasta>`   | `npx create-react-app`                    |
+| `new-native <pasta>`  | `npx create-react-native-app`             |
+| `new-next <pasta>`    | `npx create-next-app`                     |
+| `new-express <pasta>` | `npm init -y && npm install express cors` |
+| `new-koa <pasta>`     | `npm init -y && npm install koa`          |
+| `new-node <pasta>`    | `npm init -y`                             |
 
 Para mais detalhes, veja os arquivos [.bash_aliases](/files/.bash_aliases) e .[bash_profile](/files/.bash_profile).

@@ -43,7 +43,7 @@ Para instalações individuais veja:
 -  LocalWP
 -  Insomnia
 -  Nemo
--  Node.js e Yarn
+-  NVM & Node.js LTS
 -  PIP do Python
 -  PHP
 -  Spotify

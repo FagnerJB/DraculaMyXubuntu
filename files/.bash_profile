@@ -16,7 +16,7 @@ new-react() {
 
     else
         cd $HOME/Apps
-        yarn create react-app $1
+        npx create-react-app $1
         cd $1
         git init
         code .
@@ -30,7 +30,7 @@ new-native(){
 
     else
         cd $HOME/Apps
-        yarn create react-native-app $1
+        npx create-react-native-app $1
         cd $1
         code .
     fi
@@ -43,7 +43,7 @@ new-next(){
 
     else
         cd $HOME/Apps
-        yarn create next-app $1
+        npx create-next-app $1
         cd $1
         git init
         code .
@@ -62,7 +62,7 @@ new-node(){
         mkdir src
         touch index.js
         echo "/node_modules" > .gitignore
-        yarn init -y
+        npm init -y
         code .
     fi
 }
@@ -92,9 +92,9 @@ app.listen(port, () => {
 })
 EOL
         echo "/node_modules" > .gitignore
-        yarn init -y
-        yarn add express cors
-        yarn add -D nodemon
+        npm init -y
+        npm install express cors
+        npm install -D nodemon
         code .
     fi
 }
@@ -121,9 +121,9 @@ app.use(async ctx => {
 app.listen(3000)
 EOL
         echo "/node_modules" > .gitignore
-        yarn init -y
-        yarn add koa @koa/cors
-        yarn add -D nodemon
+        npm init -y
+        npm install koa @koa/cors
+        npm install -D nodemon
         code .
     fi
 }
